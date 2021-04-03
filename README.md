@@ -14,5 +14,7 @@ Includes python module smartSS:
 
     # get current portfolio value.
     smartSS.useful_tools..get_portfolio_value()
-    
+
+Amongst other useful tools.
+
 Requires user to tailor their ticker_map in config.py
