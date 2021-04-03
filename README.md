@@ -1,6 +1,6 @@
-# algotrading
+# smartSS
 
-smart stocks & shares. Gives a detailed and customisable breakdown of trading history and investment performance.
+smart Stocks & Shares. Gives a detailed and customisable breakdown of trading history and investment performance.
 
 Includes python module smartSS:
 
