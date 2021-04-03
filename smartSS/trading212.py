@@ -1,10 +1,12 @@
+import sys, os
 import pandas as pd
-import os
 
-data_dir = '/Users/s1863104/Documents/algotrading'
+
+#module root directory
+rdir = os.path.join(os.path.dirname(__file__),'..')
 
 # historical trading212 data
-history = pd.read_csv(os.path.join(data_dir,'data/historical.csv'))
+history = pd.read_csv(os.path.join(rdir,'data/historical.csv'))
 
 buys = history[(history['Action']=='Market buy') | (history['Action']=='Limit buy')]
 sells = history[(history['Action']=='Market sell') | (history['Action']=='Limit sell')]
