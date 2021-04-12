@@ -23,7 +23,7 @@ ticker_map = {  'GOOG' : 'GOOGL',
                 'INRG.UK':'INRG'}
 
 startdate = dt.datetime(2019, 3, 1)
-enddate = dt.datetime(2021, 3, 18)
+enddate = dt.datetime.now()
 
 # dataframe of historic price data
 web_df = wb.DataReader([key for key in ticker_map.keys()],
