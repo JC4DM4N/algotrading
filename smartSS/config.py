@@ -15,12 +15,16 @@ ticker_map = {  'GOOG' : 'GOOGL',
                 'JDW.UK' : 'JDW',
                 'VUKE.UK':'VUKE',
                 'VAPX.UK':'VAPX',
-                'V.US':'V',
-                'BB.US':'BB',
                 'MA.US':'MA',
+                'INRG.UK':'INRG',
+                'HSBA.UK':'HSBA',
+                'MSFT.US':'MSFT',
+                'BP.UK':'BP'}
+
+old_tickers = { 'V.US':'V',
+                'BB.US':'BB',
                 'NAKD.US':'NAKD',
-                'NOK.US':'NOK',
-                'INRG.UK':'INRG'}
+                'NOK.US':'NOK'}
 
 startdate = dt.datetime(2019, 3, 1)
 enddate = dt.datetime.now()
