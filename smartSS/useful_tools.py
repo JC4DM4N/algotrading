@@ -15,7 +15,7 @@ def get_wb_ticker(history_ticker):
     return [ticker for ticker in cfg.ticker_map.keys() if cfg.ticker_map[ticker]==history_ticker][0]
 
 def str_to_datetime(times):
-    return [dt.datetime.strptime(time, '%Y-%m-%d %H:%M:%S') for time in times]
+    return [dt.datetime.strptime(time, '%d/%m/%Y %H:%M') for time in times]
 
 def get_nearest_candle(history_ticker,action_time):
 
