@@ -92,6 +92,7 @@ def get_asset_returns_total(history_ticker):
     asset = get_asset_info(history_ticker)
     asset_buysells = hstry.buysells[hstry.buysells['Ticker']==history_ticker]
 
+    # get price and volume at initial purchase
     init_buy_price = asset_buysells['Price / share'].iloc[0]*cfg.forex[asset['Currency']]
     init_buy_volume = asset_buysells['No. of shares'].iloc[0]
     init_buy_date = asset_buysells['Time'].iloc[0]
@@ -122,9 +123,6 @@ def get_asset_returns_total(history_ticker):
         returns += total_volume*get_asset_info(history_ticker)['Price']*cfg.forex[asset['Currency']]
     return returns
 
-def get_portolio_returns_total():
-    return get_portfolio_value() - hstry.buys['Total (GBP)'].sum() + hstry.sells['Total (GBP)'].sum()
-
 def asset_returns(ticker,start_date=PORTFOLIO_STARTDATE,end_date=dt.datetime.now()):
     #get asset value in portfolio at start date and current date
     value_start = get_asset_info(ticker,start_date)['Value']
@@ -148,3 +146,7 @@ def portfolio_returns(start_date=PORTFOLIO_STARTDATE,end_date=dt.datetime.now())
     for ticker in cfg.ticker_map.values():
         returns+=asset_returns(ticker,start_date,end_date)
     return returns
+
+def get_portolio_returns_total():
+    #return get_portfolio_value() - hstry.buys['Total (GBP)'].sum() + hstry.sells['Total (GBP)'].sum()
+    return sum([get_asset_returns_total(ticker) for ticker in cfg.ticker_map.values()])
