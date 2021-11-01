@@ -38,7 +38,7 @@ def plot_activity_on_history(history_ticker):
     plt.grid(alpha=0.25)
     plt.show()
 
-def plot_portfolio_value():
+def plot_portfolio_returns():
     # portfolio start date
     startdate=PORTFOLIO_STARTDATE
 
@@ -46,4 +46,5 @@ def plot_portfolio_value():
     date_list = [startdate + dt.timedelta(days=x) for x in range(ndays)]
     returns = [ut.portfolio_returns(end_date=date) for date in date_list]
     plt.plot(date_list,returns)
+    plt.xticks(rotation=90)
     plt.show()
